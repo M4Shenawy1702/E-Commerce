@@ -36,14 +36,13 @@ namespace Persistance
                     }
                 }
 
-                if (!await _context.Products.AnyAsync())
+                if (!await _context.Set<Product>().AnyAsync())
                 {
-                    //C: \Users\M4_ElShenawy\source\repos\E - Commerce\Persistance\Data\Seeding\products.json
-                    var productsData = await File.ReadAllTextAsync(@"..\Persistance\Data\Seeding\products.json");
-                    var products = JsonSerializer.Deserialize<List<Product>>(productsData);
-                    if (products != null && products.Any())
+                    var data = await ReadFileAsync("Data/Seeding/products.json");
+                    var types = JsonSerializer.Deserialize<List<Product>>(data);
+                    if (types is not null && types.Any())
                     {
-                        await _context.AddRangeAsync(products);
+                        await _context.Set<Product>().AddRangeAsync(types);
                         await _context.SaveChangesAsync();
                     }
                 }
