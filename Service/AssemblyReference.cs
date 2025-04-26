@@ -1,4 +1,4 @@
-﻿namespace Persistance
+﻿namespace Persistence
 {
     public class AssemblyReference
     {

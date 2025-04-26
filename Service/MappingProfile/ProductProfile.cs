@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Domain.Models;
+using Domain.Models.Product;
 using Microsoft.Extensions.Configuration;
 using Shared.Dtos.Products;
 

@@ -1,4 +1,4 @@
-﻿namespace Persistance.Repositories
+﻿namespace Persistence.Repositories
 {
     public class UnitOfWork(StoreDbContext _context)
         : IUnitOfWork

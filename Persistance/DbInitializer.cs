@@ -1,6 +1,7 @@
-﻿using System.Text.Json;
+﻿using Domain.Models.Product;
+using System.Text.Json;
 
-namespace Persistance
+namespace Persistence
 {
     public class DbInitializer(StoreDbContext _context)
         : IDbInitializer

@@ -1,11 +1,12 @@
-﻿using Shared.Dtos.Products;
+﻿using Shared;
+using Shared.Dtos.Products;
 
 namespace ServiceAbstraction.IService
 {
     public interface IProductService
     {
         Task<ProductResponseDto> GetProductAsync(int id);
-        Task<IEnumerable<ProductResponseDto>> GetAllProductsAsync();
+        Task<PaginatedResult<ProductResponseDto>> GetAllProductsAsync(ProductQueryParameters parameters);
         Task<IEnumerable<BrandResponseDto>> GetAllBrandsAsync();
         Task<IEnumerable<TypeResponseDto>> GetAllTypesAsync();
 
