@@ -25,6 +25,8 @@ namespace Service
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IPaymentService, PaymentService>();
             services.AddScoped<ICashService, CashService>();
+            services.AddScoped<IBrandService, BrandService>();
+            services.AddScoped<ITypeService, TypeService>();
 
 
             // Factory Delegate Registration
@@ -40,6 +42,10 @@ namespace Service
             => provider.GetRequiredService<ICashService>());
             services.AddScoped<Func<IPaymentService>>(provider => ()
             => provider.GetRequiredService<IPaymentService>());
+            services.AddScoped<Func<IBrandService>>(provider => ()
+            => provider.GetRequiredService<IBrandService>());
+            services.AddScoped<Func<ITypeService>>(provider => ()
+            => provider.GetRequiredService<ITypeService>());
 
             return services;
         }

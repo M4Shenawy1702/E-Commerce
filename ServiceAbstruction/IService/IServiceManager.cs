@@ -7,5 +7,7 @@
         IAuthenticationService  AuthenticationService{ get; }
         IOrderService OrderService { get; }
         IPaymentService PaymentService{ get; }
+        IBrandService BrandService{ get; }
+        ITypeService TypeService{ get; }
     }
 }

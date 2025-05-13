@@ -1,7 +1,10 @@
 ﻿using AutoMapper;
 using Domain.Models.Product;
 using Microsoft.Extensions.Configuration;
+using Shared.Dtos.BrandDtos;
+using Shared.Dtos.ProductDto;
 using Shared.Dtos.Products;
+using Shared.Dtos.TypeDtos;
 
 namespace Service.MappingProfile
 {
@@ -16,6 +19,9 @@ namespace Service.MappingProfile
 
             CreateMap<ProductBrand, BrandResponseDto>();
             CreateMap<ProductType, TypeResponseDto>();
+            CreateMap<ProductDto, Product>();
+            CreateMap<BrandDto, ProductBrand>();
+            CreateMap<TypeDto, ProductType>();
         }
 
     }

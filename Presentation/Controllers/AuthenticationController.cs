@@ -7,9 +7,8 @@ using Shared.Dtos.AuthenticationDto;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 
-public class AuthenticationController(IServiceManager serviceManager) : APIController
+public class AuthenticationController(IServiceManager _serviceManager) : APIController
 {
-    private readonly IServiceManager _serviceManager = serviceManager;
 
     [HttpPost("login")]
     public async Task<ActionResult<UserResponse>> Login([FromQuery] LoginRequest request)
@@ -24,7 +23,7 @@ public class AuthenticationController(IServiceManager serviceManager) : APIContr
     }
     [HttpGet("emailexists")]
     public async Task<ActionResult<bool>> CheckUserEmailAsync(string email)
-        => Ok(await serviceManager.AuthenticationService.CheckUserEmailAsync(email));
+        => Ok(await _serviceManager.AuthenticationService.CheckUserEmailAsync(email));
 
     [HttpGet]
     public async Task<ActionResult<UserResponse>> GetCurrentUserByEmailAsync()

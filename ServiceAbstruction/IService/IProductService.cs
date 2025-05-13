@@ -1,6 +1,8 @@
 ﻿using Shared;
+using Shared.Dtos.BrandDtos;
 using Shared.Dtos.ProductDto;
 using Shared.Dtos.Products;
+using Shared.Dtos.TypeDtos;
 
 namespace ServiceAbstraction.IService
 {
@@ -8,8 +10,9 @@ namespace ServiceAbstraction.IService
     {
         Task<ProductResponseDto> GetProductAsync(int id);
         Task<PaginatedResult<ProductResponseDto>> GetAllProductsAsync(ProductQueryParameters parameters);
-        Task<IEnumerable<BrandResponseDto>> GetAllBrandsAsync();
-        Task<IEnumerable<TypeResponseDto>> GetAllTypesAsync();
+        Task<ProductResponseDto> AddProductAsync(ProductDto dto);
+        Task<ProductResponseDto> UpdateProductAsync(int id, ProductDto dto);
+        Task<bool> DeleteProductAsync(int id);
 
     }
 }

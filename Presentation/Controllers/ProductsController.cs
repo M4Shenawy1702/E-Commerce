@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Domain.Exceptions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Presentation.Attributes;
 using ServiceAbstraction.IService;
 using Shared;
+using Shared.Dtos.BrandDtos;
 using Shared.Dtos.ProductDto;
 using Shared.Dtos.Products;
+using Shared.Dtos.TypeDtos;
 
 namespace Presentation.Controllers
 {
@@ -25,16 +28,26 @@ namespace Presentation.Controllers
             var result = await _serviceManager.ProductService.GetAllProductsAsync(parameters);
             return Ok(result);
         }
-        [HttpGet("brands")]
-        public async Task<ActionResult<IEnumerable<BrandResponseDto>>> GetAllBrandsAsync()
+        [Authorize(Roles = "Admin , SuperAdmin")]
+        [HttpPost]
+        public async Task<ActionResult<ProductResponseDto>> AddProductAsync([FromForm] ProductDto dto)
         {
-            var result = await _serviceManager.ProductService.GetAllBrandsAsync();
-            return Ok(result);
+                var product = await _serviceManager.ProductService.AddProductAsync(dto);
+                return Ok(product);
         }
-        [HttpGet("Types")]
-        public async Task<ActionResult<IEnumerable<TypeResponseDto>>> GetAllTypesAsync()
+        [Authorize(Roles = "Admin , SuperAdmin")]
+        [HttpPut("{id}")]
+        public async Task<ActionResult<ProductResponseDto>> UpdateProductAsync(int id, [FromBody] ProductDto dto)
         {
-            var result = await _serviceManager.ProductService.GetAllTypesAsync();
+                var product = await _serviceManager.ProductService.UpdateProductAsync(id, dto);
+                return Ok(product);
+        }
+        [Authorize(Roles = "Admin , SuperAdmin")]
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<bool>> DeleteProductAsync(int id)
+        {
+
+            var result = await _serviceManager.ProductService.DeleteProductAsync(id);
             return Ok(result);
         }
     }

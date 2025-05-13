@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared.Dtos
+namespace Domain.Exceptions
 {
-    public enum ProductSortOption
+    public class InvalidPictureSizeException()
+        :Exception("Picture size must be less than 2MB")
     {
-        NameAsc,
-        NameDesc,
-        PriceAsc,
-        PriceDesc
     }
 }

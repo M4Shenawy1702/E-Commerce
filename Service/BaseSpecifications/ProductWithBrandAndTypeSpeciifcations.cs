@@ -1,6 +1,5 @@
 ﻿using Domain.Models.Product;
 using Service.Specifications;
-using Shared.Dtos;
 using Shared.Dtos.ProductDto;
 
 namespace Service.BaseSpecifications
