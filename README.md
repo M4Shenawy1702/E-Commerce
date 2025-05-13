@@ -104,7 +104,8 @@ dotnet run --project WebAPI
 ```
 ### 📸 Screenshots 
 
-![Swagger Doc](assets/E-Commerce API Documentation.png)
+![Swagger Doc](assets/E-Commerce%20API%20Documentation.png)
+
 
 
 
