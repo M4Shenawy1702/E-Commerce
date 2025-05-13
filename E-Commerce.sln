@@ -21,11 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{BFC3CD46-DCF7-4C2C-A158-0CB98F95D447}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{FE04453E-3875-4047-BDEB-D6E7CB875AB9}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Downloads\E-Commerce API Documentation.png = ..\..\..\Downloads\E-Commerce API Documentation.png
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
