@@ -104,6 +104,7 @@ dotnet run --project WebAPI
 ```
 ### 📸 Screenshots 
 
-Add screenshots of Swagger UI or Postman requests if desired.
+![Swagger Doc](assets/E-Commerce API Documentation.png)
+
 
 
